@@ -5,4 +5,40 @@
 
 **** CLOUD SERVICE:
 
-1. + 
+1. The variety of services (Applications) delivered to customers on demand over the internet.
+2. For Eg: Online calculator is cloud service where User can add values and do calculations.
+3. Another eg: Creating an account of website - Facebook. User passing his data, facebook cloud service receive
+    that data, validate the data if needed and store it in the server (cloud storage). This service / application
+    is on-demand (user can use anytime).
+4. The company does not need to built hardware. Just deploy the application on cloud.
+
+=============================================================================================================================
+=============================================================================================================================
+
+**** HTTP Request Methods:
+1. In HTTP (Hyper Text Transfer Protocol), always client sends the request to the server.
+2. Each request has "Request Method" which specify the server what exactly a user looking for.
+3. Based on the request User provides, server will respond with resources. for eg: A user requested for
+    https://google.com and server responded with the webpage.
+4. There are four main request methods.
+    i. GET      :   Read Operation
+    ii. POST    :   Write Operation (Create a user; sign up form)
+    iii. PUT    :   Update operation
+    iv. DELETE  :   Delete operation.
+
+5. A user sends Request Line.
+    Request line = Request Method + Resource (path).
+
+-> Server needs to know kind of request it is and what is the resources user looking for.
+-> Resource is usually a path in the request line. For eg: google.com/jeans/aeropostale/signup.
+
+**** HEADERS:
+1. User needs to send the data on a specific manner. Same way, server needs to respond the data in a proper manner.
+2. This is defined in the "Header" - "Extra information to help server identify the response type. "
+3. Header includes below information.
+    i. language     : which language to provide response.
+    ii. Character-Set
+    iii. content-type   : what type the response should return for eg: application/json
+    iv. cookies: A small amount of data server sends along with the response. This saves user name, sends the user
+            activities back to server for better serve next time
+         
