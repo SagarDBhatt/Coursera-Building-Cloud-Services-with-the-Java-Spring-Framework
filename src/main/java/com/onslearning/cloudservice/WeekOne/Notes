@@ -41,4 +41,53 @@
     iii. content-type   : what type the response should return for eg: application/json
     iv. cookies: A small amount of data server sends along with the response. This saves user name, sends the user
             activities back to server for better serve next time
-         
+
+**** BODY:
+1. It is optional part of request. It is core data sends to server.
+2. Body includes JSON payload. for eg, at the time of user sign up to a website, User informatio is passed in
+    the form of JSON Payload to the server.
+
+**** URL (Uniform Resource Locator):
+1. Client sends the request to the server in terms of request method and resource type.
+2. Client provide URL to specify the resource.
+
+for eg: https://www.google.com?city=denver&age=25
+
+    Here, anything after "?" is called Query parameters.
+
+    key1=city, value1=denver
+    key2=age,  value2=25.
+
+**** MIME TYPE:
+1. When server and user sends data, it could be of different format (xml, json, raw text ect.).
+2. Along with the data, user/server needs to specify what is the format of the data.
+
+3. MIME type is the identifier of type of format which included in the body.
+    "Content-type" header provides MIME type. Common MIME types are:
+
+    Eg: image/jpg
+        image/png
+        text/plain
+        text/html
+        application/json
+        application/xml.
+
+**** Methods to send data in Body:
+1. There are two ways, user can sends data through body.
+    i. URL Encoding : Pass key, value pair in the URL. Eg: https://www.google.com?city=denver&age=25
+    ii. Multipart: provide various parts in URL. Eg: facebook.com/user/city/denver
+
+2. When sending large file to server, use multipart method.
+    When sending small amount of data, use URL encoding method.
+3. URL encoding is efficient when sending small amount of data. (key value pair)
+
+**** HTTP Response Anatomy:
+1. When client sends request, server takes appropriate action to find resources.
+2. Server needs to respond with message whether the requested resources is found, Or the resource is moved
+    or server is unable to process the request.
+3. Server response line contains
+        i. Numerical status code (200 - OK, 400 - error, 500 - server down)
+        ii. Phrase to describe the message.
+
+4. If the resource is found then Server sends Header and Body. Body contains the resource in JSON,XML format.
+    Header contains meta data. 
