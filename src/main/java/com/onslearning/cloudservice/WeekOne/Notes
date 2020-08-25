@@ -90,4 +90,36 @@ for eg: https://www.google.com?city=denver&age=25
         ii. Phrase to describe the message.
 
 4. If the resource is found then Server sends Header and Body. Body contains the resource in JSON,XML format.
-    Header contains meta data. 
+    Header contains meta data. Header provide "Content-type". (Values could be "application/json".
+
+**** HTTP Response Codes:
+
+    1XX : Information. (Provides information as a response from server)
+    2XX : Success. [200 - OK. Server handled the request successfully.]
+    3XX : Redirection. [Page/Resource that user is looking has been moved to another location.]
+    4XX : Client Error. [404 - Page/Resource not found. Invalid request / URL]
+    5XX : Server Error. [500 - Server is unable to handle the request ]
+
+**** Cookies :
+1. Cookies are the small code that server sends to clients computer along with the response.
+2. This program keeps sending the User activity of the website to the server for better user experience.
+3. Cookies saves client details so client does not need to log in again, sends promotions based on search.
+4. Usually, cookies tracks client activities on the same website and not the other activities due to privacy issues.
+    But, nowadays, cross platform tracking is performed. So client search camera on amazon then Facebook, instagram shows advertisement on camera that day.
+5. Major cookies have expiration time i.e. Session time and then cookies stopped working.
+
+=============================================================================================================================
+=============================================================================================================================
+
+**** PROTOCOL LAYERING & APPLICATION DESIGN:
+
+1. REST, SOAP webservices are layered on HTTP protocol.
+
+
+*** HTTP POLLING:
+1. HTTP is client Driven protocol i.e. Client is initiating the communication. Client sends a request and server responded.
+2. Server received updates but can not send to client until client requested. Client needs to decide how frequent request needs to send to server for update.
+3. One of the method is - Polling. Client requests server for an update at every T seconds. Even if there is no update, server allocated the
+    resources, check for the update and sends the "no update"  response.
+4. If client does not receive any update in T seconds then client exponentially increase the time gap between two requests to 2T, 4T, 8T etc.
+
