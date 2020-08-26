@@ -119,7 +119,15 @@ for eg: https://www.google.com?city=denver&age=25
 *** HTTP POLLING:
 1. HTTP is client Driven protocol i.e. Client is initiating the communication. Client sends a request and server responded.
 2. Server received updates but can not send to client until client requested. Client needs to decide how frequent request needs to send to server for update.
-3. One of the method is - Polling. Client requests server for an update at every T seconds. Even if there is no update, server allocated the
+3. One of the method is - Polling. Client requests server for an update at every T seconds (regular interval) . Even if there is no update, server allocated the
     resources, check for the update and sends the "no update"  response.
 4. If client does not receive any update in T seconds then client exponentially increase the time gap between two requests to 2T, 4T, 8T etc.
+
+
+***** WEB SOCKET:
+1. Another approach for Client - server connection is "Web Socket".
+2. Here, Client sends request to the server and established Web socket. Web socket is bi-direction communication bridge i.e. either client or server
+    sends the data to other party. Thus, Web sockets are not completely client driven but both the parties can initiate the communication.
+3. One of the issue is when client lost the internet connectivity then web socket connection went down. Client needs to send request to server
+    and establish the web socket connection. Client should have mechanism to reestablish the socket connection at the time of disconnection.
 
