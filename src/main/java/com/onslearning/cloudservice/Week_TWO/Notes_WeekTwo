@@ -8,4 +8,11 @@
     Based on the type of request one Java servlets handles the request.
 3. Servlets has methods like "doGet()", "doPost()", "doPut()" and "doDelete()". Based on the type of
     request method, appropriate servlet method is called.
-4. Based on the request which servlets to call is identify by "web.xml" file. 
+4. Based on the request which servlets to call is identified by "web.xml" file.
+
+**** Video Servlet Operations code:
+1. User is trying to upload a video on the server. Built the servlets that allows this functionality.
+2. Create a simple class "Video.java". This class contains video metadata such as "Name", "URL" and
+    "videoDuration". I generated parameterized constructor and getters and setters method.   
+3. Create a class "videoServlets" which extends the "HTTPServlets" class.
+2. First, I need to implement "doGet(HTTPRequest request, HTTPResponse response)".
