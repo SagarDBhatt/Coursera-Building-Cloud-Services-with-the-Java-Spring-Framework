@@ -1,0 +1,11 @@
+****************************************************************************************************************
+                                                ONSJHJSA
+****************************************************************************************************************
+
+**** JAVA SERVLETS:
+1. Java technology which handles the incoming web requests is "Servlets".
+2. When browser makes HTTP requests, it goes to "Web Container" which contains one or more Java servlets.
+    Based on the type of request one Java servlets handles the request.
+3. Servlets has methods like "doGet()", "doPost()", "doPut()" and "doDelete()". Based on the type of
+    request method, appropriate servlet method is called.
+4. Based on the request which servlets to call is identify by "web.xml" file. 
