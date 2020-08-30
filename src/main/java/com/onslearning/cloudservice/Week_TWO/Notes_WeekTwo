@@ -86,6 +86,24 @@
 
             }//end of post method.
 
+================================================================================================================
+================================================================================================================
 
+**** SPRING DISPATCHER SERVLETS:
 
+1. In normal Java Servlets the process flow to handle request is:
 
+    doGet(Request){
+        i. Extract the param from Request URL.
+        ii. Validate the param. [Not null, not invalid]
+        iii. construct java obj using these request param.
+        iv. Logic to handle request.
+    }
+
+2. In any Web Request in Java Servlet, I need to follow steps i,ii,iii. Which is unnecessary operations
+    to follow each time. These code is called Boiler Plate code.
+
+3. One of the solutions to remove boiler plate code is use of Spring framework. Spring Framework has
+    specialized servlets=> "DispatcherServlets" whose operation is similar to Java Servlets.
+4. DispatcherServlets has "Controller" which handles the request. DispatcherServlets remove the boiler
+    plate code.
