@@ -186,3 +186,16 @@ For Eg:
         return newVideo;
     }
 
+5. Jackson takes the JSON payload and mapped each attribute with appropriate Setter method.
+For eg:
+        Jackson takes "name" param and mapped the value with "setName()" method of Video class.
+        Similarly, all the param mapped with their appropriate SetterMethod.
+
+6. If Dev wants Jackson to ignore some parameters and not convert them into Object then use @JsonIgnore.
+For Eg:
+        @JsonIgnore
+        public void setDuration(long duration){
+            this.duration = duration
+        }
+
+-> Here, SetDuration method is annotated as @JsonIgnore which tells Jackson lib to not convert JSON param into class object.
