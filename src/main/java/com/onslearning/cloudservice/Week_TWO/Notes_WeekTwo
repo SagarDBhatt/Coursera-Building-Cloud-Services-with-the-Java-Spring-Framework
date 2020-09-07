@@ -107,3 +107,21 @@
     specialized servlets=> "DispatcherServlets" whose operation is similar to Java Servlets.
 4. DispatcherServlets has "Controller" which handles the request. DispatcherServlets remove the boiler
     plate code.
+
+================================================================================================================
+================================================================================================================
+
+**** @ResponseBody:
+
+1. Usually in API, Dev needs to send message back. For eg of GET or POST request Dev can send a confirmation String message.
+2. In other cases, Dev returns object of the class. In assignment 1, Dev is responding the object of the "Video" class.
+3. Now, Dev needs to have an implementation of converting the video class object into HTTP Response that User can actually see.
+4. This convertion Object of Java class into HTTP Response can be achieved by using "@ResponseBody" annotation.
+
+For Eg:
+
+     @RequestMapping(value = "/video", method = RequestMethod.GET)
+     public @ResponseBody Video getVideo(Video v){
+        //.... line of code
+        return new Video();     //Returning the object of Video class.
+     }
