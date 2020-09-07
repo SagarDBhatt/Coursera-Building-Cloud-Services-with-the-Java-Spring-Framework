@@ -116,7 +116,7 @@
 1. Usually in API, Dev needs to send message back. For eg of GET or POST request Dev can send a confirmation String message.
 2. In other cases, Dev returns object of the class. In assignment 1, Dev is responding the object of the "Video" class.
 3. Now, Dev needs to have an implementation of converting the video class object into HTTP Response that User can actually see.
-4. This convertion Object of Java class into HTTP Response can be achieved by using "@ResponseBody" annotation.
+4. This conversion Object of Java class into HTTP Response can be achieved by using "@ResponseBody" annotation.
 
 For Eg:
 
@@ -125,3 +125,64 @@ For Eg:
         //.... line of code
         return new Video();     //Returning the object of Video class.
      }
+
+================================================================================================================
+================================================================================================================
+
+**** Jackson - Convert JSON Payload into Java Object vise versa:
+
+1. In RESTFul API, JSON Payload is mapped into Java Object. This can be achieve by Jackson library.
+2. For Eg, Dev created a class "Video" with "private" param as name, URL, duration ect. Dev created getter & Setter property.
+
+    public class Video {
+        private String name;
+        private String URL;
+        private long duration;
+
+        public Video(String name, String URL, long duration) {
+            this.name = name;
+            this.URL = URL;
+            this.duration = duration;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getURL() {
+            return URL;
+        }
+
+        public void setURL(String URL) {
+            this.URL = URL;
+        }
+
+        public long getDuration() {
+            return duration;
+        }
+
+        public void setDuration(long duration) {
+            this.duration = duration;
+        }
+
+
+3. In Rest API, Dev received JSON payload with name, URL and duration.
+
+    "{
+        "name" : "jacksonVideo",
+        "URL" : "http://localhost:8080/getJackson",
+        "duration" : 12345
+    }"
+
+4. API received JSON payload and convert / mapped into object of Video class. This is done by Jackson library.
+
+    public Video getJacksonVideo(@RequestBody Video v)
+    {
+        Video newVideo = new Video(v.getName(), v.getURL(), v.getDuration());
+        return newVideo;
+    }
+
