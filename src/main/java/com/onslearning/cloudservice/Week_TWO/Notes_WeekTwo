@@ -199,3 +199,52 @@ For Eg:
         }
 
 -> Here, SetDuration method is annotated as @JsonIgnore which tells Jackson lib to not convert JSON param into class object.
+
+================================================================================================================
+================================================================================================================
+
+**** Spring Dependency Injection and @Autowired:
+
+1. I created a Controller class "UserController" and Service package includes interface "UserService" which has two abstract methods "getUsers()"
+    and "getAge(String Name)".
+2. In Entity package, I have a User class with private name, age and city properties with constructor, getters and setters.
+
+3. Dependency Injection: Spring provides object of the class automatically when required. This is the concept of
+    Inversion of Control.
+
+For eg:
+    -> I need object of UserService in a controller class. I need to annotated with "@Autowired" annotation.
+
+        @Controller
+        public class UserController {
+
+            @Autowired
+            private UserService userService;
+
+        }
+
+-> I created a "UserServiceImpl" class and implements UserService interface. This class implemented abstract methods.
+
+    public class UserServiceImpl implements UserService {
+
+        User aUser;
+
+        @Override
+        public User getUsers() {
+
+            aUser = new User("Sagar", 25, "Denver");
+            return aUser;
+        }
+
+        @Override
+        public int getUserAge(String userName) {
+            if(aUser.getName() == userName)
+                return aUser.getAge();
+
+            else
+                return 0;
+        }
+    }
+
+-> I need a Configuration class which defines mapping between autowired interfaces and class which implements this interface.
+    I created a class "UserConfig" class with @Configuration annotation.
