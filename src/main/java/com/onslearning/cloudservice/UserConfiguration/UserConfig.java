@@ -1,3 +1,4 @@
+/*
 package com.onslearning.cloudservice.UserConfiguration;
 
 import com.onslearning.cloudservice.Service.UserService;
@@ -14,3 +15,4 @@ public class UserConfig {
     }
 
 }
+*/

@@ -205,8 +205,10 @@ For Eg:
 
 **** Spring Dependency Injection and @Autowired:
 
-1. I created a Controller class "UserController" and Service package includes interface "UserService" which has two abstract methods "getUsers()"
-    and "getAge(String Name)".
+1. I created a Controller class "UserController" and Service package includes interface "UserService" which has two abstract
+methods public String getUserName();
+        public int getUserAge();.
+
 2. In Entity package, I have a User class with private name, age and city properties with constructor, getters and setters.
 
 3. Dependency Injection: Spring provides object of the class automatically when required. This is the concept of
@@ -215,7 +217,7 @@ For Eg:
 For eg:
     -> I need object of UserService in a controller class. I need to annotated with "@Autowired" annotation.
 
-        @Controller
+        @RestController
         public class UserController {
 
             @Autowired
@@ -225,26 +227,23 @@ For eg:
 
 -> I created a "UserServiceImpl" class and implements UserService interface. This class implemented abstract methods.
 
-    public class UserServiceImpl implements UserService {
-
-        User aUser;
+    @Service
+    public class UserServiceImpl implements UserService{
 
         @Override
-        public User getUsers() {
-
-            aUser = new User("Sagar", 25, "Denver");
-            return aUser;
+        public String getUserName() {
+            return "Sagar";
         }
 
         @Override
-        public int getUserAge(String userName) {
-            if(aUser.getName() == userName)
-                return aUser.getAge();
-
-            else
-                return 0;
+        public int getUserAge() {
+            return 10;
         }
     }
 
--> I need a Configuration class which defines mapping between autowired interfaces and class which implements this interface.
-    I created a class "UserConfig" class with @Configuration annotation.
+-> Class whose object automatically create (@Autowired) needs to annotated with "@Service" annotation. Here, "UserServiceImpl" class
+   is annotated as @Service annotation.
+
+-> Now, I can use "userService" object of interface "UserService" to call "getUserName()" and "getUserAge()" mwthods.
+Here, UserService interface has just one class which implements this interface and methods from "UserServiceImpl" class
+will invoke.
