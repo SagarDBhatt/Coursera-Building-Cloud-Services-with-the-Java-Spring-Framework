@@ -247,3 +247,5 @@ For eg:
 -> Now, I can use "userService" object of interface "UserService" to call "getUserName()" and "getUserAge()" mwthods.
 Here, UserService interface has just one class which implements this interface and methods from "UserServiceImpl" class
 will invoke.
+
+==> Now, if "UserService" interface is been implements by two classes then  
