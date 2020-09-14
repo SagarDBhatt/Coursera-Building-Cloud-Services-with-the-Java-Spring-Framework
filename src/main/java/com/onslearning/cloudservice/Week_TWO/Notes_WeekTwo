@@ -281,3 +281,20 @@ For Eg:
         @Autowired
         private UserService userService;
 
+2. @Primary : Annotate any one class as a @Primary will receive a preference over other classes at the time of
+    multiple possible classes available.
+
+        @Primary
+        @Service
+        public class secondUserServiceImpl implements UserService{
+
+================================================================================================================
+================================================================================================================
+
+**** Spring Configuration Annotation:
+
+1. @EnableAutoConfiguration: This annotation will tell Spring to check for all @Autowired annotated elements.
+2. @Configuration :
+3. @ComponentScan({"package-name1, package-name2"}): This annotation tells spring to scan the provided package to look
+    for implemented methods, @Autowired annotation.
+4. @Service : Combination of @ComponentScan and @Configuration.     

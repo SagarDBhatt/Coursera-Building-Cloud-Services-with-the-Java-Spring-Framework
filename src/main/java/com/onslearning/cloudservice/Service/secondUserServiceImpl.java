@@ -1,7 +1,9 @@
 package com.onslearning.cloudservice.Service;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+@Primary
 @Service
 public class secondUserServiceImpl implements UserService{
 
