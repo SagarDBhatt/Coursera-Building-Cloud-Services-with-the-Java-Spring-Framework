@@ -248,4 +248,36 @@ For eg:
 Here, UserService interface has just one class which implements this interface and methods from "UserServiceImpl" class
 will invoke.
 
-==> Now, if "UserService" interface is been implements by two classes then  
+==> Now, if "UserService" interface is been implements by two classes then I need to specify which class method needs to call.
+
+For Eg: I created below class and implements "UserService" interface.
+
+@Service
+public class secondUserServiceImpl implements UserService{
+
+
+    @Override
+    public String getUserName() {
+        return "Second class implements UserService";
+    }
+
+    @Override
+    public int getUserAge() {
+        return 40;
+    }
+}
+
+-> Now, if I ran the same code then compiler throw below error saying there are two class that "UserService" interface
+    implemented by two classes. So @Autowired object of UserService inteface creates ambiguity.[private UserService userService;]
+
+    Field userService in com.onslearning.cloudservice.Controller.UserController required a single bean, but 2 were found:
+
+==> The possible ways to resolve this ambiguity:
+
+1. @Qualifier("Class-name") : This annotation specify which class needs to call if case of multiple available classes.
+
+For Eg:
+        @Qualifier("secondUserServiceImpl")
+        @Autowired
+        private UserService userService;
+
