@@ -1,0 +1,15 @@
+******************************** ONSJHJSA ******************************
+************************************************************************
+
+** What is Jenkins:
+
+-> It is a Java application (platform independent) used for continuous integration and continuous deployment.
+
+Step 1: Download Jenkins from "jenikins.io". Download LTS (Long Term Stable) war file.
+2: Download the WAR file.
+3: In Command prompt go to the location of the file and use java -jar jenkis.war.
+4: THis will install Jenkins. It provides the Admin password which needs to be saved for intial login into console.
+5: Admin PWD: 0acde524bc9548e2ba811d7861516e71
+6. Set up a Port: 8081 for Jenkins. 
+
+

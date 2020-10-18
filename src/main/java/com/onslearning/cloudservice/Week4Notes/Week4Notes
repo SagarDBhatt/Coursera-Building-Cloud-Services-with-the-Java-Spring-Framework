@@ -2,3 +2,7 @@
 ****************************************************************
 
 ** Object to Database Mapping:
+
+-> Client works with Objects of the class which marshalled into JSON to use in HTTP Body [Client Side operation].
+-> At Server Side, Json objects converted into objects.
+-> Jackson library of JAVA is used to do above conversions.
